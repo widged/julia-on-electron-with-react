@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron Development Environment</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src='lib/dat.gui.min.js'></script>
+    <script type="text/javascript">
+    var cwd = process.cwd();
+document.write(`<base href="${cwd}/" />`);
+</script>
+  <style>
+    body {
+      margin: 0; padding: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <canvas width="960" height="600"></canvas>
+    <script>
+    // You can also require other files to run in this process
+var path = require("path");
+require("babel-register")({
+  extensions: [".es6", ".es", ".jsx", ".js"],
+  sourceMaps: "true",
+  presets: ["env", 'es2015', "react"] // 'stage-0', 'es2015', 'react' messing up with the imports
+  //  plugins: ["css-modules-transform"]
+});
+var renderer = path.resolve(process.cwd(), "main.es6.js");
+var cwd = process.cwd();
+require("./context_menu.js");
+require(renderer);
+</script>
+  </body>
+</html>

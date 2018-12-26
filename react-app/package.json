@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "0.12.7",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "styled-components": "4.1.1",
+    "shellton": "5.0.0",
+    "split": "1.0.1",
+    "event-stream": "4.0.1",
+    "through": "2.3.8",
+    "through2": "3.0.0"
+  }
+}
